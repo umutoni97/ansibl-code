@@ -1,0 +1,16 @@
+---
+- hosts: devserver
+  become: yes
+  ignore_errors: yes
+  tasks:
+    - name: install package
+     package:
+       name: "{{ item }}"
+       state: present
+          with_items:
+        - wget
+        - httpd
+        - unzip
+       - name : download
+         shell:
+
